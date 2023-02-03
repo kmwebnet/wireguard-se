@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "pthread.h": "c",
+        "sm_printf.h": "c"
+    },
+    "C_Cpp.dimInactiveRegions": false
+}
