@@ -90,4 +90,4 @@ This needs prior to prepare private key inside a secure element by using [wiregu
 
 ## License
 
-This project is released under the [GPLv2](COPYING).
+If a license is stated in the source code, that license is applied, otherwise the GPL v2 license is applied, see LICENSE.
