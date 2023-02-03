@@ -73,6 +73,7 @@ The example shows SE050C2 variant selected.
 
 ## Building
 
+    $ sudo apt install raspberrypi-kernel-headers
     $ make
 
 There are no dependencies other than a good C compiler and a sane libc.
@@ -80,6 +81,8 @@ There are no dependencies other than a good C compiler and a sane libc.
 ## Installing
 
     # make install
+    # sudo depmod -a
+    # reboot
 
 ## Using
 
