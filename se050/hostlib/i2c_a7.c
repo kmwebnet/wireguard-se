@@ -9,8 +9,6 @@
  **/
 #include "i2c_a7.h"
 
-
-
 #include <linux/string.h>
 
 #include <linux/i2c-dev.h>
@@ -19,14 +17,18 @@
 #include <linux/types.h>
 #include <linux/slab.h>
 #include <linux/mm.h>
+#include <linux/mutex.h>
 
 #include "nxLog_smCom.h"
 
 static struct i2c_adapter *adapter;
 static struct i2c_client *g_client;
 
+struct mutex busmp;
+
 i2c_error_t axI2CInit(void **conn_ctx, const char *pDevName)
 {
+    mutex_init(&busmp);
     int axSmDevice = 1;
     struct i2c_board_info se050_i2c_devices = 
 	{
@@ -146,7 +148,7 @@ i2c_error_t axI2CRead(void* conn_ctx, unsigned char bus, unsigned char addr, uns
     {
         LOG_E("axI2CRead on wrong bus %x (addr %x)\n", bus, addr);
     }
-
+   mutex_lock(&busmp);
    nrRead = i2c_master_recv_dmasafe(g_client, pRx, rxLen);
    if (nrRead < 0)
    {
@@ -166,6 +168,7 @@ i2c_error_t axI2CRead(void* conn_ctx, unsigned char bus, unsigned char addr, uns
    }
     LOG_D("Done with rv = %02x ", rv);
     LOG_MAU8_D("TX (axI2CRead): ",pRx,rxLen);
+    mutex_unlock(&busmp);
     return rv;
 }
 #endif // T1oI2C
