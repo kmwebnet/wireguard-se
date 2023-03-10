@@ -75,7 +75,8 @@ void axI2CTerm(void* conn_ctx, int mode)
         conn_ctx = NULL;
         i2c_put_adapter(adapter);
     }
-
+    g_client = NULL;
+    adapter = NULL;
     return;
 }
 
