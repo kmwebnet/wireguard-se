@@ -47,7 +47,7 @@ i2c_error_t axI2CInit(void **conn_ctx, const char *pDevName)
     }
 
 	g_client = i2c_new_client_device(adapter, &se050_i2c_devices);
-	if(g_client == NULL) 
+	if(IS_ERR(g_client)) 
     {
         LOG_E("Cannot get i2c adapter functionality\n");
         i2c_put_adapter(adapter);
