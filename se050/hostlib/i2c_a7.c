@@ -72,7 +72,11 @@ void axI2CTerm(void* conn_ctx, int mode)
 {
     AX_UNUSED_ARG(mode);
     if (conn_ctx != NULL) {
-        i2c_unregister_device(g_client);
+	    if (!IS_ERR(g_client))
+	    {
+		    i2c_unregister_device(g_client);
+		    memzero_explicit(g_client, sizeof(g_client));
+	    }
         kfree(conn_ctx);
         conn_ctx = NULL;
         i2c_put_adapter(adapter);
