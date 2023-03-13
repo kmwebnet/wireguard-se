@@ -50,7 +50,10 @@ i2c_error_t axI2CInit(void **conn_ctx, const char *pDevName)
 	if(IS_ERR(g_client)) 
     {
         LOG_E("Cannot get i2c adapter functionality\n");
+	memzero_explicit(g_client, sizeof(g_client));
         i2c_put_adapter(adapter);
+	g_client = NULL;
+    	adapter = NULL;	
         return I2C_FAILED;
     }
 
