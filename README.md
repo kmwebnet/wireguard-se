@@ -80,7 +80,7 @@ There are no dependencies other than a good C compiler and a sane libc.
 
 ## Installing
 
-    # make install
+    # sudo make install
     # sudo depmod -a
     # reboot
 
