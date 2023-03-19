@@ -50,8 +50,8 @@ i2c_error_t axI2CInit(void **conn_ctx, const char *pDevName)
 	if(IS_ERR(g_client)) 
     {
         LOG_E("Cannot get i2c adapter functionality\n");
-        i2c_put_adapter(adapter);
 	g_client = NULL;
+        i2c_put_adapter(adapter);
     	adapter = NULL;	
         return I2C_FAILED;
     }
@@ -61,7 +61,9 @@ i2c_error_t axI2CInit(void **conn_ctx, const char *pDevName)
     {
         LOG_E("I2C driver: Memory allocation failed!\n");
         i2c_unregister_device(g_client); 
+	g_client = NULL;
         i2c_put_adapter(adapter);
+	adapter = NULL;    
         return I2C_FAILED;
     }
     else{
@@ -77,7 +79,7 @@ void axI2CTerm(void* conn_ctx, int mode)
 	    if (!IS_ERR(g_client))
 	    {
 		    i2c_unregister_device(g_client);
-		    memzero_explicit(g_client, sizeof(g_client));
+		    g_client = NULL;
 	    }
         kfree(conn_ctx);
         conn_ctx = NULL;
