@@ -29,8 +29,6 @@
 
 #include <linux/types.h>
 #include <linux/mutex.h>
-#include <stddef.h> 
-#include <stdint-gcc.h>
 
 /*!
  * @addtogroup sss_sw_se05x
