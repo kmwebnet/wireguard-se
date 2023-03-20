@@ -26,6 +26,8 @@
 #define MAC_BLOCK_SIZE 16
 #define AES_BLOCK_SIZE 16
 
+#define UINT8_MAX (255)
+
 sss_status_t sss_user_impl_session_open(sss_user_impl_session_t *session,
     sss_type_t subsystem,
     uint32_t application_id,
