@@ -13,14 +13,9 @@
  * 1.1   10-april-2019 : Removed compile time choice 'USE_MALLOC_FOR_APDU_BUFFER'
  *
  *****************************************************************************/
-#include <stddef.h>
 #include <linux/types.h>
-
-
 #include <linux/string.h>
-
 #include <linux/limits.h>
-
 
 #if defined(SSS_USE_FTR_FILE)
 #include "fsl_sss_ftr.h"

@@ -7,9 +7,6 @@
 #define FSL_SSS_TYPES_H
 
 #include <linux/kernel.h>
-#include <stdbool.h>
-#include <stddef.h>
-#include <stdint-gcc.h>
 #include <linux/slab.h>
 #include <linux/mm.h>
 

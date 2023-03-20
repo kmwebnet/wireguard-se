@@ -21,7 +21,6 @@ extern "C" {
 
 #if defined(__GNUC__) || defined(__arm__) || defined(__ICCARM__)
 #include <linux/kernel.h>
-#include <stdbool.h>
 #endif /* __GNUC__ || __arm__ || iccarm */
 
 #if defined(__ICCARM__)

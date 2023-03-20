@@ -6,7 +6,6 @@
 
 #ifndef _SM_PRINTF_H_
 #define _SM_PRINTF_H_
-#include <stdint-gcc.h>
 
 #include "sm_types.h"
 #ifdef __cplusplus

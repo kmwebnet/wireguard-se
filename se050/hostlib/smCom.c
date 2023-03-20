@@ -27,8 +27,6 @@
 #if defined(USE_RTOS) && (USE_RTOS == 1)
 static SemaphoreHandle_t gSmComlock;
 #elif (__GNUC__ && !AX_EMBEDDED)
-#include <stddef.h> 
-#include <stdint-gcc.h>
 #include <linux/types.h>
 #include <linux/mutex.h>
     /* Only for base session with os */
