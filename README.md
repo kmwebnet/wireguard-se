@@ -23,7 +23,7 @@ This product comes with SE050C2 variant that can handle Curve25519.
 
 The variant should keep noted that corresponds for the use of key selection on config.
 
-Raspberry Pi OS Bullseye 5.15.84-v7+
+Raspberry Pi OS 6.1.19-v7+
 
 ## Prepare
 
