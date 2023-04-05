@@ -45,8 +45,9 @@ i2c_error_t axI2CInit(void **conn_ctx, const char *pDevName)
        LOG_E("opening failed...");
        return I2C_FAILED;
     }
-
+	mutex_lock(&busmp);
 	g_client = i2c_new_client_device(adapter, &se050_i2c_devices);
+	mutex_unlock(&busmp);
 	if(IS_ERR(g_client)) 
     {
         LOG_E("Cannot get i2c adapter functionality\n");
@@ -112,7 +113,7 @@ i2c_error_t axI2CWrite(void* conn_ctx, unsigned char bus, unsigned char addr, un
         LOG_E("axI2CWrite on wrong bus %x (addr %x)\n", bus, addr);
     }
     LOG_MAU8_D("TX (axI2CWrite) > ",pTx,txLen);
-    nrWritten = i2c_master_send_dmasafe(g_client, pTx, txLen);
+    nrWritten = i2c_master_send(g_client, pTx, txLen);
     if (nrWritten < 0)
     {
        LOG_E("Failed writing data (nrWritten=%d).\n", nrWritten);
@@ -157,7 +158,7 @@ i2c_error_t axI2CRead(void* conn_ctx, unsigned char bus, unsigned char addr, uns
         LOG_E("axI2CRead on wrong bus %x (addr %x)\n", bus, addr);
     }
    mutex_lock(&busmp);
-   nrRead = i2c_master_recv_dmasafe(g_client, pRx, rxLen);
+   nrRead = i2c_master_recv(g_client, pRx, rxLen);
    if (nrRead < 0)
    {
       //LOG_E("Failed Read data (nrRead=%d).\n", nrRead);
