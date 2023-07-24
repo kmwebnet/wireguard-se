@@ -22,7 +22,7 @@ This product comes with SE050E2 variant that can handle Curve25519.
 
 The variant should keep noted that corresponds for the use of key selection on config.
 
-Raspberry Pi OS 6.1.19-v7+
+Raspberry Pi OS 6.1.21-v7+
 
 ## Prepare
 
