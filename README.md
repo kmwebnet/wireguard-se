@@ -17,9 +17,8 @@ Please consider rotate SCP03 keys.
 
 Raspberry Pi 3B+ or derivatives
 
-NXP SE050, especially the variants that can handle Curve25519. [See NXP datasheet.](https://www.nxp.jp/docs/en/application-note/AN12436.pdf)
-You can get for [Plug & Trust Click NXP SE050](https://www.mikroe.com/plugtrust-click) as off the shelf.
-This product comes with SE050C2 variant that can handle Curve25519.
+NXP SE050E, the variants that can handle Curve25519. [See NXP datasheet.](https://www.nxp.jp/docs/en/application-note/AN12436.pdf)
+This product comes with SE050E2 variant that can handle Curve25519.
 
 The variant should keep noted that corresponds for the use of key selection on config.
 
@@ -46,8 +45,7 @@ $ i2cdetect -y 1
 ```
 
 
-select the SE050 PlatformSCP03 key variants on the code as follows in se050/inc/fsl_sss_ftr.h
-The example shows SE050C2 variant selected.
+select the SE050E" PlatformSCP03 key variants on the code as follows in se050/inc/fsl_sss_ftr.h
 
 ```
 /* Enable one of these
@@ -58,14 +56,14 @@ The example shows SE050C2 variant selected.
 #define SSS_PFSCP_ENABLE_SE050B1 0
 #define SSS_PFSCP_ENABLE_SE050B2 0
 #define SSS_PFSCP_ENABLE_SE050C1 0
-#define SSS_PFSCP_ENABLE_SE050C2 1
+#define SSS_PFSCP_ENABLE_SE050C2 0
 #define SSS_PFSCP_ENABLE_SE050_DEVKIT 0
 #define SSS_PFSCP_ENABLE_SE051A2 0
 #define SSS_PFSCP_ENABLE_SE051C2 0
 #define SSS_PFSCP_ENABLE_SE050F2 0
 #define SSS_PFSCP_ENABLE_SE051C_0005A8FA 0
 #define SSS_PFSCP_ENABLE_SE051A_0001A920 0
-#define SSS_PFSCP_ENABLE_SE050E_0001A921 0
+#define SSS_PFSCP_ENABLE_SE050E_0001A921 1
 #define SSS_PFSCP_ENABLE_A5000_0004A736 0
 #define SSS_PFSCP_ENABLE_SE050F2_0001A92A 0
 #define SSS_PFSCP_ENABLE_OTHER 0
