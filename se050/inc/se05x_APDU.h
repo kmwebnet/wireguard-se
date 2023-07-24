@@ -70,7 +70,8 @@ smStatus_t Se05x_API_EC_CurveGetId(pSe05xSession_t session_ctx, uint32_t objectI
 /** Wrapper for @ref Se05x_API_DigestOneShot */
 #define Se05x_API_SHAOneShot Se05x_API_DigestOneShot
 
-/** @} */
+// For SIMW-656
+bool Se05x_IsInValidRangeOfUID(uint32_t uid);
 
 #ifdef __cplusplus
 }

@@ -42,7 +42,7 @@
 #define SSS_HAVE_APPLET_SE05X_B 0
 
 /** SE050 (Super set of A + B) */
-#define SSS_HAVE_APPLET_SE05X_C 1
+#define SSS_HAVE_APPLET_SE05X_C 0
 
 /** SE050 (Similar to A71CL) */
 #define SSS_HAVE_APPLET_SE05X_L 0
@@ -54,7 +54,7 @@
 #define SSS_HAVE_APPLET_AUTH 0
 
 /** SE050E */
-#define SSS_HAVE_APPLET_SE050_E 0
+#define SSS_HAVE_APPLET_SE050_E 1
 
 /** NXP Internal testing Applet */
 #define SSS_HAVE_APPLET_LOOPBACK 0
@@ -104,13 +104,13 @@
  */
 
 /** SE050 */
-#define SSS_HAVE_SE05X_VER_03_XX 1
+#define SSS_HAVE_SE05X_VER_03_XX 0
 
 /** SE051 */
 #define SSS_HAVE_SE05X_VER_06_00 0
 
 /** SE051 */
-#define SSS_HAVE_SE05X_VER_07_02 0
+#define SSS_HAVE_SE05X_VER_07_02 1
 
 #if (( 0                             \
     + SSS_HAVE_SE05X_VER_03_XX       \
@@ -408,7 +408,7 @@
 #define SSSFTR_SE05X_ECC 1
 
 /** SE05X Secure Element : RSA */
-#define SSSFTR_SE05X_RSA 1
+#define SSSFTR_SE05X_RSA 0
 
 /** SE05X Secure Element : KEY operations : SET Key */
 #define SSSFTR_SE05X_KEY_SET 1
@@ -442,7 +442,7 @@
 #define SSSFTR_SW_ECC 1
 
 /** Software : RSA */
-#define SSSFTR_SW_RSA 1
+#define SSSFTR_SW_RSA 0
 
 /** Software : KEY operations : SET Key */
 #define SSSFTR_SW_KEY_SET 1
@@ -571,7 +571,7 @@
 #define SSS_PFSCP_ENABLE_SE050A2 0
 #define SSS_PFSCP_ENABLE_SE050B1 0
 #define SSS_PFSCP_ENABLE_SE050B2 0
-#define SSS_PFSCP_ENABLE_SE050C1 1
+#define SSS_PFSCP_ENABLE_SE050C1 0
 #define SSS_PFSCP_ENABLE_SE050C2 0
 #define SSS_PFSCP_ENABLE_SE050_DEVKIT 0
 #define SSS_PFSCP_ENABLE_SE051A2 0
@@ -579,7 +579,7 @@
 #define SSS_PFSCP_ENABLE_SE050F2 0
 #define SSS_PFSCP_ENABLE_SE051C_0005A8FA 0
 #define SSS_PFSCP_ENABLE_SE051A_0001A920 0
-#define SSS_PFSCP_ENABLE_SE050E_0001A921 0
+#define SSS_PFSCP_ENABLE_SE050E_0001A921 1
 #define SSS_PFSCP_ENABLE_A5000_0004A736 0
 #define SSS_PFSCP_ENABLE_SE050F2_0001A92A 0
 #define SSS_PFSCP_ENABLE_OTHER 0
